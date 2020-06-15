@@ -2,6 +2,7 @@ const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
   apiKey: '2a7601a0f2b7488189316c04b9738561',
+
 });
 
 const handleApiCall= (req,res)=> {
@@ -10,7 +11,7 @@ const handleApiCall= (req,res)=> {
     .then(data => {
       res.json(data);
     })
-    .catch(err => res.status(400).json('unable to work with API'))
+    .catch(err => console.log(err))
 }
 
 const handleImage = (req, res, db) => {
