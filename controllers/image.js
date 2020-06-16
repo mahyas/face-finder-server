@@ -6,14 +6,14 @@ const app = new Clarifai.App({
 });
 
 const handleApiCall = (req, res) => {
-  console.log(req);
-  console.log(res);
-  console.log(data);
+  console.log('mahya',req);
+  console.log('amir',res);
+  console.log('felfel', data);
   app.models
   .predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
   .then(data => {res.json(data);
   })
-  .catch(err => console.log(err))
+  .catch(err => console.log('errorrrr', err))
 };
 
 const handleImage = (req, res, db) => {
